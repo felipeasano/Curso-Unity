@@ -5,8 +5,7 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     public GameObject player;
-    private Vector3 offset = new Vector3(0, 4.5f, -6f);
-    private Vector3 offsetRotate;
+    private Vector3 offset = new Vector3(-0.09f, 2f, 0.2f);
     // Start is called before the first frame update
     void Start()
     {
@@ -16,18 +15,7 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        //transform.rotation = player.transform.rotation;
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            Vector3 novaposicao = new Vector3(-0.09f, 2.3f, 1f);
-            offset = novaposicao;
-            transform.position = player.transform.position + offset;
-        }
-        else
-        {
-            offset = new Vector3(0, 4.5f, -6f);
-            transform.position = player.transform.position + offset;
-        }
+        transform.position = player.transform.position + offset;
+        transform.rotation = player.transform.rotation;
     }
 }
